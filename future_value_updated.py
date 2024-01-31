@@ -52,11 +52,11 @@ def getPositiveInteger(prompt):
         try:
             value = int(input(prompt))
             if value <= 0:
-                print("Value entered must be a positive, whole number greater than 0.0 - Try again.")
+                print("Value entered must be a positive, whole number greater than 0 - Try again.")
             else:
                 return value
         except ValueError:
-            print("Value entered must be a positive, whole number greater than 0.0 - Try again.")
+            print("Value entered must be a positive, whole number greater than 0 - Try again.")
 
 
 # Main function

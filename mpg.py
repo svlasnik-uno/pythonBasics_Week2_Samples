@@ -1,37 +1,27 @@
 #!/usr/bin/env python3
 
-def get_price():
-    while True:
-        try:
-            price = float(input("Enter price: "))
-            return price
-        except ValueError:
-            print("Invalid decimal number. Please try again.")
+# display a welcome message
+print("The Miles Per Gallon program")
+print()
 
-def get_quantity():
-    while True:
-        try:
-            quantity = int(input("Enter quantity: "))
-            return quantity
-        except ValueError:
-            print("Invalid integer. Please try again.")
+# get input from the user
+choice = "y"
+while choice.lower() == "y":
+    miles_driven = float(input("Enter miles driven:         "))
+    gallons_used = float(input("Enter gallons of gas used:  "))
 
-def main():
-    print("The Total Calculator program\n")
-
-    # get the price and quantity
-    price = get_price()
-    quantity = get_quantity()
-    
-    # calculate the total
-    total = price * quantity
-
-    # display the results
+    if miles_driven <= 0:
+        print("Miles driven must be greater than zero. Please try again.")
+    elif gallons_used <= 0:
+        print("Gallons used must be greater than zero. Please try again.")
+    else:
+        # calculate and display miles per gallon
+        mpg = round((miles_driven // gallons_used), 2)   # // s.b /
+        print("Miles Per Gallon:          ", mpg)
+    choice = input("Continue? (y/n): ")
     print()
-    print("PRICE:    ", price)
-    print("QUANTITY: ", quantity)
-    print("TOTAL:    ", total)
+
+print("Bye")
 
 
-if __name__ == "__main__":
-    main()
+
